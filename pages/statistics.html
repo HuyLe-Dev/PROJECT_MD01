@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/statistics.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/logout.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Phân tích</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="category-left">
+            <a href="../pages/index.html" class="category-logo">
+                <img src="../imgs/category/fire.png" alt="logo">
+                <span>Ecommerce</span>
+            </a>
+            <div class="category-left-nav">
+                <a href="../pages/statistics.html" class="left-nav-item active">
+                    <i class="ri-home-2-fill"></i>
+                    <span>Thống kê</span>
+                </a>
+                <a href="../pages/category-manager.html" class="left-nav-item">
+                    <i class="ri-folders-fill"></i>
+                    <span>Danh mục</span>
+                </a>
+                <a href="product-manager.html" class="left-nav-item">
+                    <i class="ri-folder-line"></i>
+                    <span>Sản phẩm</span>
+                </a>
+            </div>
+        </div>
+        <div class="category-right">
+            <nav>
+                <div class="nav-user">
+                    <i class="ri-notification-2-fill"></i>
+
+                    <div class="user-wrapper" id="userBtn">
+                        <img src="../imgs/category/avatar-user.png" alt="avatar-user" id="currentUserAvatar">
+
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="dropdown-item" id="openLogoutModalBtn">
+                                <i class="ri-logout-box-r-line"></i>
+                                <span>Log out</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <header>
+                <div class="category-title">
+                    Thống kê
+                </div>
+            </header>
+
+        </div>
+    </div>
+    <div id="toast-container"></div>
+    <div id="confirm-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-icon-wrapper">
+                <div class="modal-icon-inner">
+                    <i class="ri-error-warning-line"></i>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <h3 class="modal-title">Xác nhận</h3>
+                <p class="modal-desc">
+                    Bạn có chắc chắn muốn xóa sản phẩm <span id="confirm-product-name" class="highlight-text"></span>
+                    khỏi hệ thống không?
+                </p>
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <div class="modal-actions">
+                <button id="btn-cancel" class="btn btn--secondary">Hủy</button>
+                <button id="btn-confirm" class="btn btn--danger">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="logout-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-icon-wrapper">
+                <div class="modal-icon-inner">
+                    <i class="ri-logout-box-r-line" style="color: #D92D20;"></i>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <h3 class="modal-title">Đăng xuất</h3>
+                <p class="modal-desc">
+                    Bạn có chắc chắn muốn đăng xuất khỏi hệ thống không?
+                </p>
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <div class="modal-actions">
+                <button id="btn-cancel-logout" class="btn btn--secondary">Hủy</button>
+                <button id="btn-confirm-logout" class="btn btn--danger">Đăng xuất</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/statistics.js"></script>
+<script src="../js/logout.js"></script>
+
+</html>

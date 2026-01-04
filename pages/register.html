@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Đăng ký tài khoản</title>
+</head>
+
+<body>
+    <div class="register-container">
+        <header>
+            <h1>Đăng ký tài khoản</h1>
+            <p class="subheader">Đăng ký tài khoản để sử dụng dịch vụ</p>
+        </header>
+
+        <form action="#" class="register-form">
+            <div class="form-row split-row">
+                <div class="form-group">
+                    <label for="lastname">Họ và tên đệm</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="firstname">Tên</label>
+                    <input type="text" id="firstname" name="firstname">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com">
+                <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms">
+                <label for="terms" class="checkbox-label">
+                    Bạn đồng ý với <a href="#">chính sách và điều khoản</a>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Đăng ký</button>
+        </form>
+
+        <div class="form-footer">
+            Bạn đã có tài khoản? <a href="#">Đăng nhập</a>
+        </div>
+    </div>
+    <div id="toast-container"></div>
+</body>
+<script src="../js/register.js"></script>
+
+</html>

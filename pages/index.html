@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <img class="nav-logo" src="../imgs/logo.png" alt="nav-logo">
+        <div class="nav-search">
+            <i class="ri-search-line nav-search-icon"></i>
+            <input type="search" class="nav-search-input" name="q" placeholder="Tìm kiếm" aria-label="Search website" />
+        </div>
+        <div class="nav-link">
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html">Giới thiệu</a>
+            <a href="index.html">Liên hệ</a>
+        </div>
+        <div class="nav-icons">
+            <i class="ri-heart-line"></i>
+            <i class="ri-shopping-cart-2-line"></i>
+            <i class="ri-user-line"></i>
+        </div>
+    </nav>
+    <menu>
+        <div class="menu-list">
+            <div class="menu-item">
+                <i class="ri-smartphone-line"></i>
+                <span class="menu-item-text">Điện thoại</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="ri-macbook-line"></i> <span class="menu-item-text">Laptop</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="ri-gamepad-line"></i> <span class="menu-item-text">Đồng hồ thông minh</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="ri-camera-line"></i> <span class="menu-item-text">Cameras</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="ri-headphone-line"></i> <span class="menu-item-text">Tai nghe</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="ri-gamepad-line"></i> <span class="menu-item-text">Gaming</span>
+            </div>
+        </div>
+    </menu>
+    <!-- <header>
+        <div class="header-container">
+            <div class="header-text">
+                <h3>Đột phá công nghệ</h3>
+                <h1>IPhone 14 <b>PRO</b></h1>
+                <h4>Được tạo ra để thay đổi mọi thứ để tốt hơn. Cho tất cả mọi người</h4>
+                <button>Mua ngay</button>
+            </div>
+            <img class="header-img" src="../imgs/iphone-header.png" alt="header-img">
+        </div>
+    </header> -->
+
+    <header>
+        <div class="header-container">
+
+            <div class="mySlides fade">
+                <div class="header-text">
+                    <h3>Đột phá công nghệ</h3>
+                    <h1>iPhone 14 <b>PRO</b></h1>
+                    <h4>Được tạo ra để thay đổi mọi thứ để tốt hơn. Cho tất cả mọi người</h4>
+                    <button>Mua ngay</button>
+                </div>
+                <img class="header-img" src="../imgs/iphone-header.png" alt="header-img">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="header-text">
+                    <h3>iPad thế hệ mới</h3>
+                    <h1>Apple <b>iPad 9</b></h1>
+
+                    <h4>Thiết kế siêu mỏng. Hiệu năng vượt trội. Thời lượng pin cả ngày.</h4>
+                    <button>Khám phá</button>
+                </div>
+                <img class="header-img" src="../imgs/product-ipad.png" alt="Macbook">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="header-text">
+                    <h3>Thiết kế gập cao cấp</h3>
+                    <h1>Galaxy Z <b>Fold5</b></h1>
+                    <h4>Mang đến trải nghiệm độc đáo cho người dùng chuyên nghiệp và yêu
+                        thích công nghệ.
+                    </h4>
+                    <button>Đặt hàng</button>
+                </div>
+                <img class="header-img" src="../imgs/product-sumsung.png" alt="Watch">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div style="text-align:center; position: absolute; bottom: 20px; width: 100%; z-index: 2;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </header>
+
+    <div class="slide-container">
+        <section class="slide">
+            <div class="slide-top">
+                <div class="slide-top-title">Danh mục sản phẩm</div>
+                <div class="slide-top-icon">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <i class="ri-arrow-right-s-line"></i>
+                </div>
+            </div>
+            <div class="slide-bottom">
+                <div class="slide-bottom-item">
+                    <span>Điện thoại</span>
+                </div>
+                <div class="slide-bottom-item">
+                    <span>Đồng hồ</span>
+                </div>
+                <div class="slide-bottom-item">
+                    <span>Cameras</span>
+                </div>
+                <div class="slide-bottom-item">
+                    <span>Tai nghe</span>
+                </div>
+                <div class="slide-bottom-item">
+                    <span>Máy tính</span>
+                </div>
+                <div class="slide-bottom-item">
+                    <span>Gaming</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <main>
+        <div class="main-container">
+            <div class="main-tab">
+                <span class="main-tab-item tab-item-actived">New Arrival</span>
+                <span class="main-tab-item">Bestseller</span>
+                <span class="main-tab-item">Featured Products</span>
+            </div>
+            <div class="main-product">
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-iphone-14.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Apple iPhone 14 Pro Max 128GB Deep Purple
+                        </div>
+                        <div class="product-card-price">900$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-camera.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Blackmagic Pocket Cinema Camera 6k
+                        </div>
+                        <div class="product-card-price">2535$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-watch.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Apple Watch Series 9 GPS 41mm Starlight Aluminium
+                        </div>
+                        <div class="product-card-price">399$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-headphone.png" class="product-card-img">
+                        <div class="product-card-title">
+                            AirPods Max Silver
+                        </div>
+                        <div class="product-card-price">549$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-watch-2.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Samsung Galaxy Watch6 Classic 47mm Black
+                        </div>
+                        <div class="product-card-price">369$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-sumsung.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Galaxy Z Fold5 Unlocked | 256GB | Phantom Black
+                        </div>
+                        <div class="product-card-price">1799$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-galaxy-buds.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Galaxy Buds FE Graphite
+                        </div>
+                        <div class="product-card-price">99.99$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-product-card">
+                    <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                            onclick="changeColorIcon(this)"></i></div>
+                    <div class="product-card-content">
+                        <img src="../imgs/product-ipad.png" class="product-card-img">
+                        <div class="product-card-title">
+                            Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021
+                        </div>
+                        <div class="product-card-price">398$</div>
+                        <div class="product-card-button">
+                            <p>
+                                Mua ngay
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="product-sale">
+        <h3>Sản phẩm giảm giá</h3>
+        <div class="product-sale-container">
+            <div class="main-product-card">
+                <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                        onclick="changeColorIcon(this)"></i></div>
+                <div class="product-card-content">
+                    <img src="../imgs/sale-iphone-14.png" class="product-card-img">
+                    <div class="product-card-title">
+                        Apple iPhone 14 Pro 512GB Gold (MQ233)
+                    </div>
+                    <div class="product-card-price">$1437</div>
+                    <div class="product-card-button">
+                        <p>
+                            Mua ngay
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-product-card">
+                <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                        onclick="changeColorIcon(this)"></i></div>
+                <div class="product-card-content">
+                    <img src="../imgs/product-headphone.png" class="product-card-img">
+                    <div class="product-card-title">
+                        AirPods Max Silver
+                    </div>
+                    <div class="product-card-price">549$</div>
+                    <div class="product-card-button">
+                        <p>
+                            Mua ngay
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-product-card">
+                <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                        onclick="changeColorIcon(this)"></i></div>
+                <div class="product-card-content">
+                    <img src="../imgs/product-watch.png" class="product-card-img">
+                    <div class="product-card-title">
+                        Apple Watch Series 9 GPS 41mm Starlight Aluminium
+                    </div>
+                    <div class="product-card-price">399$</div>
+                    <div class="product-card-button">
+                        <p>
+                            Mua ngay
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-product-card">
+                <div class="product-card-favorite"><i id="product-icon" class="ri-heart-line"
+                        onclick="changeColorIcon(this)"></i></div>
+                <div class="product-card-content">
+                    <img src="../imgs/sale-iphone-14-pro.png" class="product-card-img">
+                    <div class="product-card-title">
+                        Apple iPhone 14 Pro 1TB Gold (MQ2V3)
+                    </div>
+                    <div class="product-card-price">1499$</div>
+                    <div class="product-card-button">
+                        <p>
+                            Mua ngay
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="advertise">
+        <img class="advertise-img-1" src="../imgs/advertise/image-6.png" alt="image-6">
+        <img class="advertise-img-2" src="../imgs/advertise/image-9.png" alt="image-9">
+        <img class="advertise-img-3" src="../imgs/advertise/image-10.png" alt="image-10">
+        <img class="advertise-img-4" src="../imgs/advertise/image-8.png" alt="image-8">
+        <img class="advertise-img-5" src="../imgs/advertise/image-7.png" alt="image-7">
+        <div class="advertise-content">
+            <h2>Ưu đãi mùa hè</h2>
+            <h4>Nhanh tay săn đón các sản phẩm chất lượng</h4>
+            <button>Mua ngay</button>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <img src="../imgs/logo-footer.png" alt="logo-footer">
+                    <h4>Chúng tôi cung cấp các sản phẩm công nghệ, giúp khách hàng thỏa sức trải nghiệm các dịch vụ,
+                        tiện ích nhanh chóng và hiệu quả.</h4>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-services">
+                        <h3>Dịch vụ</h3>
+                        <h4>Chương trình khuyến mãi</h4>
+                        <h4>Gift cards</h4>
+                        <h4>Tín dụng và thanh toán</h4>
+                        <h4>Dịch vụ hợp đồng</h4>
+                        <h4>Ví tiền điện tử</h4>
+                        <h4>Thanh toán</h4>
+                    </div>
+                    <div class="footer-support">
+                        <h3>Hỗ trợ cho người mua</h3>
+                        <h4>Tìm kiếm đơn đặt hàng</h4>
+                        <h4>Điều khoản giao hàng</h4>
+                        <h4>Trao đổi và trả hàng</h4>
+                        <h4>Chinh sách bảo hành</h4>
+                        <h4>Câu hỏi thường gặp</h4>
+                        <h4>Chính sách và điều khoản</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <i class="ri-twitter-fill"></i>
+                <i class="ri-facebook-fill"></i>
+                <i class="ri-tiktok-fill"></i>
+                <i class="ri-instagram-fill"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../js/index.js"></script>
+
+</html>

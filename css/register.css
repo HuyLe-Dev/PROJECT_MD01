@@ -1,0 +1,243 @@
+/* Căn giữa màn hình */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+/* Container bao ngoài */
+.register-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- HEADER STYLES --- */
+header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.subheader {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #667085;
+}
+
+/* --- FORM STYLES --- */
+.register-form {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Style cho từng nhóm input */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    height: 74px;
+    gap: 6px;
+}
+
+/* Label */
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #344054;
+    line-height: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Input */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    height: 48px;
+    padding: 12px 16px;
+    border: 1px solid #D0D5DD;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    color: #667085;
+    box-sizing: border-box;
+    /* Đảm bảo padding không làm vỡ kích thước 48px */
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group input:focus {
+    border-color: #007AFF;
+}
+
+/* Xử lý hàng ngang: Họ và Tên */
+.split-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 74px;
+}
+
+.split-row .form-group {
+    flex: 1;
+    /* Chia đều độ rộng */
+    width: auto;
+    /* Reset width để flex hoạt động */
+}
+
+/* Checkbox Style */
+.checkbox-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    height: 24px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    /* 1. Xóa giao diện mặc định của trình duyệt */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid #D0D5DD;
+    /* Viền xám */
+    border-radius: 6px;
+    /* Bo góc */
+    /* Căn giữa dấu tích sau này */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 4. Style khi ĐÃ TICK (:checked) */
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: #007AFF;
+    /* Nền xanh */
+    border-color: #007AFF;
+    /* Viền xanh */
+}
+
+/* 5. Tạo dấu tích (Checkmark) bằng pseudo-element ::after */
+.checkbox-group input[type="checkbox"]::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    /* Tạo hình chữ L */
+    transform: rotate(45deg);
+    /* Xoay chữ L thành dấu tích */
+    opacity: 0;
+    /* Ẩn đi khi chưa tick */
+    margin-bottom: 2px;
+}
+
+/* Hiện dấu tích khi đã checked */
+.checkbox-group input[type="checkbox"]:checked::after {
+    opacity: 1;
+}
+
+.checkbox-label a {
+    color: #007AFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Button Đăng ký */
+.btn-submit {
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    height: 48px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* --- FOOTER FORM --- */
+.form-footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
+}
+
+.form-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        margin-top: 64px;
+    }
+
+    .register-form {
+        padding: 16px;
+    }
+
+    .split-row {
+        flex-direction: column;
+        gap: 24px;
+        height: 148px;
+    }
+
+    .split-row {
+        margin-bottom: 24px;
+    }
+
+    .form-footer {
+        margin-bottom: 25px;
+    }
+}
+
+/* Style khi input có lỗi */
+.form-group.error input {
+    border-color: #e74c3c !important;
+    /* Viền đỏ */
+    background-color: #fceae9;
+}
+
+/* Dòng chữ thông báo lỗi nhỏ bên dưới input */
+.form-group .error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 0px;
+    display: none;
+    /* Mặc định ẩn */
+}
+
+.form-group.error .error-message {
+    display: block;
+    /* Hiện khi có lỗi */
+}

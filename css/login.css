@@ -1,0 +1,252 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form {
+    width: 535px;
+}
+
+.form-header {
+    margin-bottom: 64px;
+    margin-left: 9px;
+}
+
+.title {
+    color: #090914;
+    font-size: 52px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #52525b;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+    margin-left: 9px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.form-label {
+    color: #090914;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-input {
+    height: 60px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    padding: 12px 16px;
+}
+
+.form-function {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 34px;
+    margin-left: 9px;
+}
+
+.remember-account {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.input-checkbox {
+    /* 1. Xóa giao diện mặc định của trình duyệt */
+    -webkit-appearance: none;
+    appearance: none;
+    height: 19px;
+    width: 19px;
+    cursor: pointer;
+    border: 1px solid #94A3B8;
+    border-radius: 5px;
+
+    /* Căn giữa dấu tích sau này */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 4. Style khi ĐÃ TICK (:checked) */
+.input-checkbox:checked {
+    background-color: #007AFF;
+    /* Nền xanh */
+    border-color: #007AFF;
+    /* Viền xanh */
+}
+
+/* 5. Tạo dấu tích (Checkmark) bằng pseudo-element ::after */
+.input-checkbox::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    /* Tạo hình chữ L */
+    transform: rotate(45deg);
+    /* Xoay chữ L thành dấu tích */
+    opacity: 0;
+    /* Ẩn đi khi chưa tick */
+    margin-bottom: 2px;
+}
+
+/* Hiện dấu tích khi đã checked */
+.input-checkbox:checked::after {
+    opacity: 1;
+}
+
+.remember-account span {
+    color: #18181b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-button {
+    height: 55px;
+    background-color: #2563eb;
+    border-radius: 12px;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin-bottom: 34px;
+    font-family: "Roboto", sans-serif;
+}
+
+.form-redirect {
+    text-align: center;
+}
+
+.form-redirect span {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-redirect a,
+.forgot-account a {
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.form-function-mobile,
+.description-mobile {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .form {
+        width: 450px;
+        padding: 16px;
+    }
+
+    .form-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+        margin-bottom: 24px;
+    }
+
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        color: #52525b;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .form-body,
+    .form-function {
+        margin-left: 0px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-function,
+    .description {
+        display: none;
+    }
+
+    .form-function-mobile {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+        font-size: 14px;
+    }
+
+    .description-mobile {
+        display: block;
+        color: #667085;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .agree-policies-text-link {
+        color: #007AFF;
+        font-weight: 600;
+    }
+
+    .form-redirect {
+        display: none;
+    }
+
+    .form-button {
+        width: 418px;
+        height: 48px;
+    }
+
+}
+
+/* Style cho input khi có lỗi */
+.form-group.error .form-input {
+    border-color: #e74c3c;
+    background-color: #fff6f6;
+}
+
+/* Dòng chữ thông báo lỗi nhỏ bên dưới input */
+.form-group .error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 0px;
+    display: none; /* Mặc định ẩn */
+    font-weight: 500;
+}
+
+.form-group.error .error-message {
+    display: block; /* Hiện khi có lỗi */
+}

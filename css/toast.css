@@ -1,0 +1,105 @@
+/* TOAST CONTAINER */
+#toast-container {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999;
+}
+
+/* STYLE CHUNG CHO TOAST */
+.toast {
+    display: flex;
+    align-items: flex-start;
+
+    width: 450px;
+    height: 91px;
+    box-sizing: border-box;
+    /* Để padding không làm vỡ kích thước 450x91 */
+
+    background-color: #333E5A;
+    border-radius: 16px;
+    padding: 16px 16px 18px 16px;
+
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 16px;
+    animation: slideInLeft 0.5s ease forwards, fadeOut 1s ease 3s forwards;
+}
+
+/* ICON */
+.toast__icon {
+    font-size: 24px;
+    margin-right: 8px;
+
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+/* Màu icon mặc định (Success) */
+.toast--success .toast__icon {
+    color: #32D583;
+}
+
+/* PHẦN NỘI DUNG CHỮ */
+.toast__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Tiêu đề: "Thành công" */
+.toast__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 24px;
+
+    margin-bottom: 0px;
+}
+
+/* Nội dung: "Xóa sản phẩm thành công" */
+.toast__msg {
+    font-size: 14px;
+    font-weight: 400;
+    color: #F4F6FA;
+    line-height: 21px;
+
+    margin-top: 4px;
+}
+
+/* NÚT ĐÓNG (X) */
+.toast__close {
+    font-size: 20px;
+    color: #98A2B3;
+    cursor: pointer;
+    margin-left: 12px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.toast__close:hover {
+    color: #FFFFFF;
+}
+
+/* ANIMATION */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}

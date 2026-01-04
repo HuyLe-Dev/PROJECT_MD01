@@ -1,0 +1,690 @@
+body {
+    height: 100vh;
+}
+
+nav {
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 88px;
+    padding: 16px 0px;
+}
+
+.nav-logo {
+    width: 96px;
+    height: 28px;
+}
+
+.nav-search {
+    position: relative;
+    width: 478px;
+    height: 56px;
+}
+
+.nav-search-input {
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F5;
+    padding: 16px 16px 16px 48px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.nav-search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    font-size: 20px;
+    color: #9D9D9D;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.nav-link {
+    width: 306px;
+    height: 19px;
+    display: flex;
+    gap: 52px;
+}
+
+.nav-link a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #9D9D9D;
+}
+
+.nav-link a:first-child {
+    color: #000000;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 24px;
+    width: 144px;
+    height: 32px;
+}
+
+.nav-icons i {
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 5px 8px 5px 7px;
+}
+
+menu {
+    width: 100%;
+    height: 48px;
+    background-color: #2E2E2E;
+}
+
+.menu-list {
+    max-width: 1120px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    padding: 0 45.2px;
+    height: 24px;
+    color: #9D9D9D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s;
+    flex: 1;
+}
+
+.menu-item:hover {
+    color: #fff;
+}
+
+.menu-item .menu-item-text {
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 24px;
+    background-color: #585858;
+}
+
+.menu-item:first-child {
+    padding-left: 0px;
+}
+
+.menu-item:last-child {
+    padding-right: 0;
+}
+
+.menu-item:last-child::after {
+    display: none;
+}
+
+/* header {
+    width: 100%;
+    height: 632px;
+    margin: auto;
+    background-color: #211C24;
+}
+
+.header-container {
+    max-width: 1120px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-text {
+    width: 714px;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header-text h3 {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 32px;
+    color: #9D9D9D;
+}
+
+.header-text h1 {
+    font-size: 96px;
+    line-height: 72px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.header-text h4 {
+    color: #9D9D9D;
+}
+
+.header-text button {
+    width: 187px;
+    height: 56px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background-color: #211C24;
+    border: 1px solid #FFFFFF;
+    font-size: 16px;
+}
+
+.header-img {
+    width: 406px;
+} */
+/* START SLIDE HEADER */
+
+/* --- 1. GIỮ NGUYÊN CSS GỐC CỦA BẠN --- */
+header {
+    width: 100%;
+    height: 632px;
+    margin: auto;
+    background-color: #211C24;
+    position: relative;
+    /* Thêm dòng này để căn vị trí nút Next/Prev */
+}
+
+/* Sửa lại header-container: Bỏ display flex ở đây để tránh conflict */
+.header-container {
+    max-width: 1120px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    /* display: flex;  <-- XÓA DÒNG NÀY (Move vào .mySlides) */
+    /* align-items: center; <-- XÓA DÒNG NÀY */
+}
+
+.header-text {
+    width: 714px;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header-text h3 {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 32px;
+    color: #9D9D9D;
+}
+
+.header-text h1 {
+    font-size: 96px;
+    line-height: 72px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.header-text h4 {
+    color: #9D9D9D;
+}
+
+.header-text button {
+    width: 187px;
+    height: 56px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background-color: #211C24;
+    border: 1px solid #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header-img {
+    width: 406px;
+    /* Thêm object-fit để ảnh không bị méo nếu thay ảnh khác size */
+    object-fit: contain;
+}
+
+/* --- 2. THÊM CSS MỚI CHO SLIDE --- */
+
+/* Class này thay thế vai trò Flexbox của header-container cũ */
+.mySlides {
+    display: none;
+    /* Mặc định ẩn */
+    height: 100%;
+    /* Full chiều cao 632px */
+    width: 100%;
+
+    /* TÁI TẠO LẠI LAYOUT CỦA BẠN TẠI ĐÂY */
+    align-items: center;
+    /* Căn giữa dọc */
+    justify-content: space-between;
+    /* Đẩy text sang trái, ảnh sang phải */
+}
+
+/* Hiệu ứng Fade */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Nút Next/Prev */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10;
+    /* Đảm bảo nút nằm trên ảnh */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dấu chấm */
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #717171;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #FFFFFF;
+}
+
+/* END SLIDE HEADER */
+
+.slide-container {
+    width: 100%;
+    height: 352px;
+    margin: auto;
+    background-color: #FAFAFA;
+    padding-top: 81px;
+}
+
+
+.slide {
+    max-width: 1120px;
+    height: 352px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.slide-top {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide-top-title {
+    color: #000000;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.slide-top-icon {
+    color: #000000;
+    font-size: 24px;
+}
+
+.slide-bottom {
+    width: 100%;
+    height: 128px;
+    display: flex;
+    gap: 32px;
+}
+
+.slide-bottom-item {
+    width: 160px;
+    height: 128px;
+    background-color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+
+
+main {
+    width: 100%;
+    height: 1000px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.main-container {
+    max-width: 1120px;
+    height: 1000px;
+    margin: auto;
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.main-tab {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    gap: 32px;
+}
+
+.main-tab-item {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+.tab-item-actived {
+    color: #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.main-product {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.main-product-card {
+    width: 268px;
+    height: 432px;
+    padding: 24px 16px;
+    background-color: #F6F6F6;
+    border-radius: 9px;
+}
+
+.product-card-favorite {
+    width: 100%;
+    height: 32px;
+    text-align: end;
+    margin-bottom: 16px;
+}
+
+.product-card-favorite i {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    color: #909090C4;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.product-card-content {
+    width: 236px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.product-card-title {
+    width: 100%;
+    height: 48px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+}
+
+.product-card-price {
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.product-card-button {
+    width: 193px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 12px 64px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-sale {
+    max-width: 1120px;
+    height: 632px;
+    display: flex;
+    flex-direction: column;
+    padding: 58px 0px 80px 0px;
+    margin: auto;
+}
+
+.product-sale h3 {
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.product-sale-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.advertise {
+    position: relative;
+    width: 100%;
+    height: 448px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2E2E2E;
+    background: linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.advertise-content {
+    width: 498px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.advertise h2 {
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 72px;
+    color: #FFFFFF;
+}
+
+.advertise h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #787878;
+    line-height: 32px;
+    margin-bottom: 40px;
+}
+
+.advertise-content button {
+    width: 187px;
+    height: 56px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background-color: #211C24;
+    border: 1px solid #FFFFFF;
+    font-size: 16px;
+}
+
+.advertise-img-1,
+.advertise-img-2,
+.advertise-img-3,
+.advertise-img-4,
+.advertise-img-5 {
+    position: absolute;
+}
+
+.advertise-img-1 {
+    top: 0px;
+    left: 15%;
+}
+
+.advertise-img-2 {
+    top: 0px;
+    left: 2%;
+}
+
+.advertise-img-3 {
+    top: 40%;
+    left: 0px;
+}
+
+.advertise-img-4 {
+    top: 0px;
+    right: 0px;
+}
+
+.advertise-img-5 {
+    top: 55%;
+    right: 0px;
+}
+
+footer {
+    width: 100%;
+    height: 464px;
+    background-color: #000000;
+    margin: auto;
+}
+
+.footer-container {
+    max-width: 1120px;
+    height: 100%;
+    padding: 104px 0px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 24px;
+}
+
+.footer-top {
+    max-width: 1120px;
+    height: 100%;
+    display: flex;
+    gap: 112px;
+}
+
+.footer-left {
+    width: 384px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-left img {
+    width: 96px;
+    height: 28px;
+    color: white;
+}
+
+.footer-left h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 171%;
+}
+
+.footer-right {
+    width: 623px;
+    height: 216px;
+    display: flex;
+    gap: 32px;
+}
+
+.footer-services,
+.footer-support {
+    width: 295.5px;
+    height: 216px;
+    line-height: 32px;
+}
+
+.footer-services h3,
+.footer-support h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.footer-services h4,
+.footer-support h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.footer-bottom {
+    width: 173px;
+    height: 16px;
+    display: flex;
+}
+
+.footer-bottom i {
+    flex: 1;
+    width: 16px;
+    height: 16px;
+    color: #FFFFFF;
+}
