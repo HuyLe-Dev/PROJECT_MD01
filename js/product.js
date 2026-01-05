@@ -478,7 +478,7 @@ function filterData() {
 
 /* --- KHAI BÁO BIẾN TOÀN CỤC CHO PHÂN TRANG --- */
 let currentPage = 1;
-const itemsPerPage = 8; // Số dòng mỗi trang (Bạn có thể đổi thành 10)
+const itemsPerPage = 8; // Số dòng mỗi trang
 let currentFilteredData = []; // Lưu trữ dữ liệu sau khi Lọc & Sort
 
 
@@ -683,7 +683,6 @@ function saveProduct() {
         }
 
         if (image && !validImageTypes.test(image)) {
-            // Lưu ý: Bạn cần sửa ID hiển thị lỗi trong HTML thành 'errorImage' (xem bên dưới)
             document.getElementById('errorImage').innerText = "Link ảnh phải có đuôi .jpg, .png hoặc .webp";
             document.getElementById('errorImage').style.display = 'block';
             document.getElementById('image').classList.add('input-error');
