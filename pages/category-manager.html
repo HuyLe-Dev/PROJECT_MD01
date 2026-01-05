@@ -2,208 +2,206 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý danh mục</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/category.css">
-    <link rel="stylesheet" href="../css/toast.css">
-    <link rel="stylesheet" href="../css/modal.css">
-    <link rel="stylesheet" href="../css/logout.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý danh mục</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/category.css">
+  <link rel="stylesheet" href="../css/toast.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <link rel="stylesheet" href="../css/logout.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="category-left">
-            <a href="../pages/index.html" class="category-logo">
-                <img src="../imgs/category/fire.png" alt="logo">
-                <span>Ecommerce</span>
-            </a>
-            <div class="category-left-nav">
-                <a href="../pages/statistics.html" class="left-nav-item">
-                    <i class="ri-home-2-fill"></i>
-                    <span>Thống kê</span>
-                </a>
-                <a href="../pages/category-manager.html" class="left-nav-item active">
-                    <i class="ri-folders-fill"></i>
-                    <span>Danh mục</span>
-                </a>
-                <a href="product-manager.html" class="left-nav-item">
-                    <i class="ri-folder-line"></i>
-                    <span>Sản phẩm</span>
-                </a>
-            </div>
-        </div>
-        <div class="category-right">
-            <nav>
-                <div class="nav-user">
-                    <i class="ri-notification-2-fill"></i>
-
-                    <div class="user-wrapper" id="userBtn">
-                        <img src="../imgs/category/avatar-user.png" alt="avatar-user" id="currentUserAvatar">
-
-                        <div class="user-dropdown" id="userDropdown">
-                            <div class="dropdown-item" id="openLogoutModalBtn">
-                                <i class="ri-logout-box-r-line"></i>
-                                <span>Log out</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <header>
-                <div class="category-title">
-                    Danh mục
-                </div>
-                <div class="category-add" onclick="openModal()">Thêm sản phẩm mới</div>
-            </header>
-            <div class="category-function">
-                <div class="custom-dropdown" id="statusDropdown">
-
-                    <div class="dropdown-selected" onclick="toggleDropdown()">
-                        <span id="selectedText">Tất cả</span>
-                        <i class="ri-arrow-down-s-line arrow-icon"></i>
-                    </div>
-
-                    <ul class="dropdown-list">
-                        <li onclick="selectOption('Tất cả', 'ALL')">Tất cả</li>
-                        <li onclick="selectOption('Đang hoạt động', 'ACTIVE')">Đang hoạt động</li>
-                        <li onclick="selectOption('Ngừng hoạt động', 'INACTIVE')">Ngừng hoạt động</li>
-                    </ul>
-
-                    <input type="hidden" name="status" id="statusInput" value="ALL">
-                </div>
-                <div class="function-search">
-                    <i class="ri-search-line function-search-icon"></i>
-                    <input id="searchName" type="search" class="function-search-input" name="q"
-                        placeholder="Tìm kiếm danh mục theo tên" aria-label="Search website" />
-                </div>
-            </div>
-            <main>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="col-code" onclick="handleSort('category_code')"
-                                    style="cursor: pointer; user-select: none;">
-                                    Mã danh mục
-                                    <i id="icon-category_code" class="ri-arrow-down-line"
-                                        style="color: #ccc; margin-left: 5px;"></i>
-                                </th>
-                                <th class="col-name" onclick="handleSort('category_name')"
-                                    style="cursor: pointer; user-select: none;">
-                                    Tên danh mục
-                                    <i id="icon-category_name" class="ri-arrow-down-line"
-                                        style="color: #ccc; margin-left: 5px;"></i>
-                                </th>
-
-                                <th class="col-status">Trạng thái</th>
-                                <th class="col-action">Chức năng</th>
-                            </tr>
-                        </thead>
-                        <tbody id="categoryTableBody">
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="categoryModal" class="modal">
-                    <div class="modal-content" id="modalContent">
-                        <div class="modal-header">
-                            <h3 id="modalTitle">Thêm mới danh mục</h3>
-                            <span class="close-btn" onclick="closeModal()">
-                                <i class="ri-close-line"></i>
-                            </span>
-                        </div>
-
-                        <input type="hidden" id="categoryId">
-
-                        <div class="form-group">
-                            <label>Mã danh mục <span class="required">*</span></label>
-                            <input type="text" id="categoryCode" placeholder="Ví dụ: DM001"
-                                oninput="clearError('categoryCode', 'errorCode')">
-                            <span class="error-message" id="errorCode"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Tên danh mục <span class="required">*</span></label>
-                            <input type="text" id="categoryName" placeholder="Ví dụ: Hoa quả"
-                                oninput="clearError('categoryName', 'errorName')">
-                            <span class="error-message" id="errorName"></span>
-                        </div>
-
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="modalStatus" value="ACTIVE" checked>
-                                <span>Đang hoạt động</span>
-                            </label>
-
-                            <label class="radio-option">
-                                <input type="radio" name="modalStatus" value="INACTIVE">
-                                <span>Ngừng hoạt động</span>
-                            </label>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button class="btn-cancel" onclick="closeModal()">Hủy</button>
-                            <button class="btn-save" onclick="saveCategory()">Lưu lại</button>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <div class="pagination-container" id="pagination">
-            </div>
-        </div>
+  <div class="container">
+    <div class="category-left">
+      <a href="../pages/index.html" class="category-logo">
+        <img src="../imgs/category/fire.png" alt="logo">
+        <span>Ecommerce</span>
+      </a>
+      <div class="category-left-nav">
+        <a href="../pages/statistics.html" class="left-nav-item">
+          <i class="ri-home-2-fill"></i>
+          <span>Thống kê</span>
+        </a>
+        <a href="../pages/category-manager.html" class="left-nav-item active">
+          <i class="ri-folders-fill"></i>
+          <span>Danh mục</span>
+        </a>
+        <a href="product-manager.html" class="left-nav-item">
+          <i class="ri-folder-line"></i>
+          <span>Sản phẩm</span>
+        </a>
+      </div>
     </div>
-    <div id="toast-container"></div>
-    <div id="confirm-modal" class="modal-overlay hidden">
-        <div class="modal-box">
-            <div class="modal-icon-wrapper">
-                <div class="modal-icon-inner">
-                    <i class="ri-error-warning-line"></i>
-                </div>
-            </div>
+    <div class="category-right">
+      <nav>
+        <div class="nav-user">
+          <i class="ri-notification-2-fill"></i>
 
-            <div class="modal-body">
-                <h3 class="modal-title">Xác nhận</h3>
-                <p class="modal-desc">
-                    Bạn có chắc chắn muốn xóa sản phẩm <span id="confirm-product-name" class="highlight-text"></span>
-                    khỏi hệ thống không?
-                </p>
-            </div>
+          <div class="user-wrapper" id="userBtn">
+            <img src="../imgs/category/avatar-user.png" alt="avatar-user" id="currentUserAvatar">
 
-            <div class="modal-divider"></div>
-
-            <div class="modal-actions">
-                <button id="btn-cancel" class="btn btn--secondary">Hủy</button>
-                <button id="btn-confirm" class="btn btn--danger">Xóa</button>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="dropdown-item" id="openLogoutModalBtn">
+                <i class="ri-logout-box-r-line"></i>
+                <span>Log out</span>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-
-    <div id="logout-modal" class="modal-overlay hidden">
-        <div class="modal-box">
-            <div class="modal-icon-wrapper">
-                <div class="modal-icon-inner">
-                    <i class="ri-logout-box-r-line" style="color: #D92D20;"></i>
-                </div>
-            </div>
-
-            <div class="modal-body">
-                <h3 class="modal-title">Đăng xuất</h3>
-                <p class="modal-desc">
-                    Bạn có chắc chắn muốn đăng xuất khỏi hệ thống không?
-                </p>
-            </div>
-
-            <div class="modal-divider"></div>
-
-            <div class="modal-actions">
-                <button id="btn-cancel-logout" class="btn btn--secondary">Hủy</button>
-                <button id="btn-confirm-logout" class="btn btn--danger">Đăng xuất</button>
-            </div>
+      </nav>
+      <header>
+        <div class="category-title">
+          Danh mục
         </div>
+        <div class="category-add" onclick="openModal()">Thêm mới danh mục</div>
+      </header>
+      <div class="category-function">
+        <div class="custom-dropdown" id="statusDropdown">
+
+          <div class="dropdown-selected" onclick="toggleDropdown()">
+            <span id="selectedText">Tất cả</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </div>
+          <ul class="dropdown-list">
+            <li onclick="selectOption('Tất cả', 'ALL')">Tất cả</li>
+            <li onclick="selectOption('Đang hoạt động', 'ACTIVE')">Đang hoạt động</li>
+            <li onclick="selectOption('Ngừng hoạt động', 'INACTIVE')">Ngừng hoạt động</li>
+          </ul>
+
+          <input type="hidden" name="status" id="statusInput" value="ALL">
+        </div>
+        <div class="function-search">
+          <i class="ri-search-line function-search-icon"></i>
+          <input id="searchName" type="search" class="function-search-input" name="q"
+            placeholder="Tìm kiếm danh mục theo tên" aria-label="Search website" />
+        </div>
+      </div>
+      <main>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-code" onclick="handleSort('category_code')" style="cursor: pointer; user-select: none;">
+                  Mã danh mục
+                  <i id="icon-category_code" class="ri-arrow-down-line" style="color: #ccc; margin-left: 5px;"></i>
+                </th>
+                <th class="col-name" onclick="handleSort('category_name')" style="cursor: pointer; user-select: none;">
+                  Tên danh mục
+                  <i id="icon-category_name" class="ri-arrow-down-line" style="color: #ccc; margin-left: 5px;"></i>
+                </th>
+
+                <th class="col-status">Trạng thái</th>
+                <th class="col-action">Chức năng</th>
+              </tr>
+            </thead>
+            <tbody id="categoryTableBody">
+            </tbody>
+          </table>
+        </div>
+
+        <div id="categoryModal" class="modal">
+          <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+              <h3 id="modalTitle">Thêm mới danh mục</h3>
+              <span class="close-btn" onclick="closeModal()">
+                <i class="ri-close-line"></i>
+              </span>
+            </div>
+
+            <input type="hidden" id="categoryId">
+
+            <div class="form-group">
+              <label>Mã danh mục <span class="required">*</span></label>
+              <input type="text" id="categoryCode" placeholder="Ví dụ: DM001"
+                oninput="clearError('categoryCode', 'errorCode')">
+              <span class="error-message" id="errorCode"></span>
+            </div>
+
+            <div class="form-group">
+              <label>Tên danh mục <span class="required">*</span></label>
+              <input type="text" id="categoryName" placeholder="Ví dụ: Hoa quả"
+                oninput="clearError('categoryName', 'errorName')">
+              <span class="error-message" id="errorName"></span>
+            </div>
+
+            <div class="radio-group">
+              <label>Trạng thái</label>
+              <div class="radio-option-group">
+                <label class="radio-option">
+                  <input type="radio" name="modalStatus" value="ACTIVE" checked>
+                  <span>Đang hoạt động</span>
+                </label>
+
+                <label class="radio-option">
+                  <input type="radio" name="modalStatus" value="INACTIVE">
+                  <span>Ngừng hoạt động</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn-cancel" onclick="closeModal()">Hủy</button>
+              <button class="btn-save" onclick="saveCategory()">Thêm</button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="pagination-container" id="pagination">
+      </div>
     </div>
+  </div>
+  <div id="toast-container"></div>
+  <div id="confirm-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-icon-wrapper">
+        <div class="modal-icon-inner">
+          <i class="ri-error-warning-line"></i>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <h3 class="modal-title">Xác nhận</h3>
+        <p class="modal-desc">
+          Bạn có chắc chắn muốn xóa sản phẩm <span id="confirm-product-name" class="highlight-text"></span>
+          khỏi hệ thống không?
+        </p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-actions">
+        <button id="btn-cancel" class="btn btn--secondary">Hủy</button>
+        <button id="btn-confirm" class="btn btn--danger">Xóa</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="logout-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-icon-wrapper">
+        <div class="modal-icon-inner">
+          <i class="ri-logout-box-r-line" style="color: #D92D20;"></i>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <h3 class="modal-title">Đăng xuất</h3>
+        <p class="modal-desc">
+          Bạn có chắc chắn muốn đăng xuất khỏi hệ thống không?
+        </p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-actions">
+        <button id="btn-cancel-logout" class="btn btn--secondary">Hủy</button>
+        <button id="btn-confirm-logout" class="btn btn--danger">Đăng xuất</button>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="../js/category.js"></script>
 <script src="../js/logout.js"></script>
