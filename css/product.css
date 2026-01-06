@@ -90,7 +90,7 @@ nav {
 }
 
 header {
-    padding: 24px;
+    padding: 24px 24px 0px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,12 +119,12 @@ header {
 }
 
 .category-function {
-    padding: 24px 24px 0px 24px;
+    padding: 16px 24px 0px 24px;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 /* Container chính */
@@ -233,8 +233,9 @@ header {
 
 main {
     width: 1160px;
-    height: 650px;
+    height: 620px;
     padding: 0px 24px 0px 24px;
+    margin-bottom: 23px;
 }
 
 /* 1. Cấu hình bảng chính */
@@ -778,4 +779,3 @@ input[type="number"] {
     opacity: 0.5;
     background-color: #f5f5f5;
 }
-

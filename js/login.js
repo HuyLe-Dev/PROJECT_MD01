@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     showSuccessToast('Đăng nhập thành công! Đang chuyển hướng...');
 
                     setTimeout(() => {
-                        window.location.href = '../pages/index.html'; // Chuyển về Dashboard
+                        window.location.href = '../pages/statistics.html'; // Chuyển về Dashboard
                     }, 1500); // Đợi 1.5s để người dùng đọc thông báo
 
                 } else {
