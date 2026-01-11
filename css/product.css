@@ -178,6 +178,11 @@ header {
     display: none;
     /* Mặc định ẩn */
     z-index: 10;
+    /* --- ĐỂ TẠO SCROLL --- */
+    max-height: 250px;
+    /* Giới hạn chiều cao danh sách khoảng 250px */
+    overflow-y: auto;
+    /* Tự động hiện thanh cuộn dọc nếu nội dung dài hơn 250px */
 }
 
 /* Hiện danh sách khi có class 'active' */
