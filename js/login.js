@@ -97,7 +97,6 @@ function showToast({ title = '', message = '', type = 'success', duration = 3000
     const main = document.getElementById('toast-container');
     if (main) {
         const toast = document.createElement('div');
-        // ... (Giữ nguyên phần logic tạo thẻ div như cũ) ...
         const autoRemoveId = setTimeout(function () {
             main.removeChild(toast);
         }, duration + 1000);
